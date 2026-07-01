@@ -55,7 +55,7 @@ export default function Contact() {
             <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" />
             <div>
               <strong className="font-bold block text-white mb-0.5">Inquiry Received.</strong>
-              Your info has been sent. We'll review your scope and get back to you within 24 business hours.
+              Your info has been sent. We'll review the details and get back to you within 24 business hours.
             </div>
           </div>
         )}
@@ -64,7 +64,7 @@ export default function Contact() {
           <div className="mb-8 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-start gap-3 text-rose-400 text-sm">
             <XCircle className="w-5 h-5 shrink-0 mt-0.5" />
             <div>
-              <strong className="font-bold block text-white mb-0.5">Transmission Failed.</strong>
+              <strong className="font-bold block text-white mb-0.5">Submission Failed.</strong>
               Something went wrong. Please try again or reach out to us directly.
             </div>
           </div>
