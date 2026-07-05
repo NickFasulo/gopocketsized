@@ -16,7 +16,7 @@ export default function Contact() {
     const data = Object.fromEntries(new FormData(form));
     
     const payload = {
-      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || process.env.WEB3FORMS_ACCESS_KEY,
+      access_key: "2c215054-7bbd-4d59-9e5c-db7d4d423767",
       from_name: "PocketSized Consulting",
       subject: "New PocketSized Project Inquiry",
       ...data
