@@ -48,7 +48,7 @@ export default function Header() {
               width={32}
               height={32}
               priority
-              className="w-55 h-full object-contain transition-transform group-hover:scale-102"
+              className="w-50 h-full object-contain transition-transform group-hover:scale-102"
             />
           </Link>
           

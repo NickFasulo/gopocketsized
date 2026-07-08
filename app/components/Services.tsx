@@ -1,41 +1,41 @@
-import { Users, LineChart, Terminal, Layers, ShieldCheck, Headphones } from 'lucide-react';
+import { Users, Code2, Terminal, Layers, ShieldCheck, Headphones } from 'lucide-react';
 
 const services = [
   {
     icon: <Users className="w-5 h-5" />,
-    title: "Customer Success Architecture",
+    title: "Success Architecture & Decks",
     category: "Customer Experience",
-    desc: "Designing post-sale customer lifecycles, proactive health-scoring frameworks, and custom account management playbooks that defend and expand revenue."
+    desc: "Designing comprehensive post-sale customer lifecycles, high-touch onboarding decks, and quarterly business review (QBR) frameworks that defend and expand revenue."
   },
   {
     icon: <Headphones className="w-5 h-5" />,
-    title: "CX Strategy & Onboarding",
+    title: "Touchpoint Optimization",
     category: "Customer Experience",
-    desc: "Mapping and streamlining user onboarding journeys to collapse time-to-value, reduce churn, and turn active users into brand advocates."
-  },
-  {
-    icon: <LineChart className="w-5 h-5" />,
-    title: "Account Management Systems",
-    category: "Customer Experience",
-    desc: "Setting up modern CRM workflows, establishing strategic renewal cycles, and scaling cross-functional client communication strategies."
-  },
-  {
-    icon: <Terminal className="w-5 h-5" />,
-    title: "End-to-End QA Automation",
-    category: "Engineering Quality",
-    desc: "Building highly stable, automated UI and API test frameworks from the ground up using TypeScript and modern web automation tools."
-  },
-  {
-    icon: <ShieldCheck className="w-5 h-5" />,
-    title: "Regression & Quality Assurance",
-    category: "Engineering Quality",
-    desc: "Formulating bulletproof test strategies, smoke suites, and comprehensive bug tracking to catch business-critical regressions before they reach production."
+    desc: "Mapping targeted client engagement strategies including structured product walkthroughs, check-in intervals, and intentional product launch or closing workflows."
   },
   {
     icon: <Layers className="w-5 h-5" />,
-    title: "Technical Operations",
+    title: "CRM Lifecycle Management",
+    category: "Customer Experience",
+    desc: "Structuring clean customer relationship management workspaces, establishing strict data input models, and ensuring predictable account communication channels."
+  },
+  {
+    icon: <Code2 className="w-5 h-5" />,
+    title: "Modern Frontend Development",
     category: "Engineering Quality",
-    desc: "Integrating test automation directly into your CI/CD deployment pipelines, managing staging environment stability, and optimizing developer feedback loops."
+    desc: "Building highly modular, accessible, and reactive user interfaces using React, Next.js, and Vite, tightly styled via Tailwind CSS or Material-UI design systems."
+  },
+  {
+    icon: <Terminal className="w-5 h-5" />,
+    title: "Playwright Browser Automation",
+    category: "Engineering Quality",
+    desc: "Engineering highly stable end-to-end (E2E) UI and feature workflows using TypeScript, state management systems (Redux), and robust automated test code scripts."
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: "Technical Operations & QA",
+    category: "Engineering Quality",
+    desc: "Implementing clean software testing protocols, structured bug tracking, and automated CI/CD pipeline runs using GitHub Actions, Jira, ClickUp, and Zendesk."
   }
 ];
 
@@ -43,9 +43,9 @@ export default function Services() {
   return (
     <section id="services" className="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8 border-t border-[#b0c7cc]/40">
       <div className="text-center mb-16">
-        <h2 className="text-3xl font-extrabold text-[#455157] mb-3">Two Disciplines. One Flawless Execution.</h2>
+        <h2 className="text-3xl font-extrabold text-[#455157] mb-3">We bridge the gap between doing it yourself <br className="hidden sm:inline" /> and hiring a full-time team.</h2>
         <p className="text-[#74838b] max-w-xl mx-auto text-sm sm:text-base">
-          We optimize the two most critical levers of your product ecosystem: user experience and code reliability.
+          We believe every vision deserves thoughtful, strategic support. Our collaborative partnership is designed to help you move ideas forward through critical thinking, constructive planning, and hands-on execution. Whether you need a sounding board, a strategic partner, or an extra set of experienced hands, we're here to help you build with intention.
         </p>
       </div>
 

@@ -12,23 +12,17 @@ export default function AboutPage() {
             <Target className="w-4 h-4 text-[#74838b]" /> Our Mission
           </div>
           <h1 className="text-4xl font-extrabold text-[#455157] tracking-tight sm:text-5xl mb-8 max-w-2xl mx-auto">
-            We bridge the gap between doing it yourself and hiring a full-time team.
+            First and foremost, we're a human-led partner.
           </h1>
           <div className="text-base sm:text-lg text-[#74838b] max-w-2xl mx-auto leading-relaxed text-left space-y-6">
             <p>
-              We believe every vision deserves thoughtful, strategic support. Our collaborative partnership is designed to help you move ideas forward through critical thinking, constructive planning, and hands-on execution. Whether you need a sounding board, a strategic partner, or an extra set of experienced hands, we're here to help you build with intention.
+              If you have what we like to call a pocket-sized project, we'll build a customized plan around the support you need. From strategic brainstorming and process mapping to client onboarding, operational development, and project execution, we become an extension of your team without the overhead of hiring internally.
             </p>
             <p>
               We don't simply complete tasks we're assigned. As leaders in our respective fields, we bring our own expertise to the table by identifying opportunities for improvement, strengthening workflows, uncovering operational gaps, and offering solutions that help your business run more effectively.
             </p>
             <p>
               Whether you're launching something new or you're an established company that needs additional support on a specific initiative, we're ready to step in where we're needed most.
-            </p>
-            <p className="font-bold text-[#455157] text-center py-2">
-              First and foremost, we're a human-led partner.
-            </p>
-            <p>
-              If you have what we like to call a pocket-sized project, we'll build a customized plan around the support you need. From strategic brainstorming and process mapping to client onboarding, operational development, and project execution, we become an extension of your team without the overhead of hiring internally.
             </p>
             <p>
               We believe AI is an incredible tool, and we use it ourselves to enhance our work where appropriate. But we also know that some of the most valuable parts of building a business still require human insight, collaboration, creativity, and thoughtful decision-making. That's where we come in.
