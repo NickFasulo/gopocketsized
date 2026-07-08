@@ -5,7 +5,7 @@ import { Mail, CheckCircle, XCircle } from 'lucide-react';
 export default function Contact() {
   const [status, setStatus] = useState<'IDLE' | 'PENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
 
-  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     const form = e.currentTarget;
@@ -43,16 +43,16 @@ export default function Contact() {
 
   return (
     <section id="contact" className="max-w-4xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
-      <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-slate-800/60 to-slate-950 border border-slate-800 max-w-3xl mx-auto">
-        <Mail className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#455157] border border-[#74838b]/30 max-w-3xl mx-auto shadow-xl shadow-[#455157]/10">
+        <Mail className="w-12 h-12 text-[#9db7bf] mx-auto mb-4" />
         <h2 className="text-3xl font-extrabold text-white text-center mb-4 tracking-tight">Let's talk specs.</h2>
-        <p className="text-slate-400 text-sm sm:text-base text-center max-w-md mx-auto mb-10">
+        <p className="text-[#d6dfe1] text-sm sm:text-base text-center max-w-md mx-auto mb-10">
           Have an engineering roadblock, an automation suite to scope, or a project requiring field-tested execution? Let's connect.
         </p>
 
         {status === 'SUCCESS' && (
-          <div className="mb-8 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-start gap-3 text-emerald-400 text-sm">
-            <CheckCircle className="w-5 h-5 shrink-0 mt-0.5" />
+          <div className="mb-8 p-4 rounded-xl bg-[#b0c7cc]/20 border border-[#b0c7cc]/40 flex items-start gap-3 text-[#d6dfe1] text-sm">
+            <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-white" />
             <div>
               <strong className="font-bold block text-white mb-0.5">Inquiry Received.</strong>
               Your info has been sent. We'll review the details and get back to you within 24 business hours.
@@ -61,8 +61,8 @@ export default function Contact() {
         )}
 
         {status === 'ERROR' && (
-          <div className="mb-8 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-start gap-3 text-rose-400 text-sm">
-            <XCircle className="w-5 h-5 shrink-0 mt-0.5" />
+          <div className="mb-8 p-4 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-start gap-3 text-rose-200 text-sm">
+            <XCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-300" />
             <div>
               <strong className="font-bold block text-white mb-0.5">Submission Failed.</strong>
               Something went wrong. Please try again or reach out to us directly.
@@ -77,27 +77,27 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
-              <label htmlFor="firstName" className="text-xs font-semibold text-slate-300 uppercase tracking-wider">First Name</label>
-              <input type="text" id="firstName" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm transition" />
+              <label htmlFor="firstName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">First Name</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
             </div>
             
             <div className="flex flex-col gap-2">
-              <label htmlFor="lastName" className="text-xs font-semibold text-slate-300 uppercase tracking-wider">Last Name</label>
-              <input type="text" id="lastName" name="lastName" required placeholder="Doe" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm transition" />
+              <label htmlFor="lastName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Doe" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="text-xs font-semibold text-slate-300 uppercase tracking-wider">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="john@company.com" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm transition" />
+            <label htmlFor="email" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@company.com" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-xs font-semibold text-slate-300 uppercase tracking-wider">Project Details / Message</label>
-            <textarea id="message" name="message" required rows={5} placeholder="Tell us about your technical roadmap..." className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 text-sm transition resize-none" />
+            <label htmlFor="message" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Project Details / Message</label>
+            <textarea id="message" name="message" required rows={5} placeholder="Tell us about your technical roadmap..." className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 resize-none" />
           </div>
 
-          <button type="submit" disabled={status === 'PENDING'} className="w-full px-6 py-3.5 rounded-xl bg-emerald-500 text-slate-950 font-bold hover:bg-emerald-400 disabled:bg-slate-700 disabled:text-slate-400 disabled:cursor-not-allowed transition text-center text-sm shadow-lg shadow-emerald-500/10">
+          <button type="submit" disabled={status === 'PENDING'} className="w-full px-6 py-3.5 rounded-xl bg-[#74838b] text-white font-bold border border-[#b0c7cc]/30 hover:bg-[#9db7bf] disabled:bg-[#74838b]/40 disabled:text-[#b0c7cc]/60 disabled:cursor-not-allowed transition-colors duration-200 text-center text-sm shadow-md shadow-[#455157]/20">
             {status === 'PENDING' ? 'Transmitting...' : 'Submit Inquiry'}
           </button>
         </form>
