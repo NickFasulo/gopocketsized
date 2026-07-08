@@ -97,7 +97,7 @@ export default function Contact() {
             <textarea id="message" name="message" required rows={5} placeholder="Tell us about your technical roadmap..." className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 resize-none" />
           </div>
 
-          <button type="submit" disabled={status === 'PENDING'} className="w-full px-6 py-3.5 rounded-xl bg-[#74838b] text-white font-bold border border-[#b0c7cc]/30 hover:bg-[#9db7bf] disabled:bg-[#74838b]/40 disabled:text-[#b0c7cc]/60 disabled:cursor-not-allowed transition-colors duration-200 text-center text-sm shadow-md shadow-[#455157]/20">
+          <button type="submit" disabled={status === 'PENDING'} className="w-full px-6 py-3.5 rounded-xl bg-[#74838b] text-white font-bold border border-[#b0c7cc]/30 cursor-pointer hover:bg-[#9db7bf] disabled:bg-[#74838b]/40 disabled:text-[#b0c7cc]/60 disabled:cursor-not-allowed transition-colors duration-200 text-center text-sm shadow-md shadow-[#455157]/20">
             {status === 'PENDING' ? 'Transmitting...' : 'Submit Inquiry'}
           </button>
         </form>
