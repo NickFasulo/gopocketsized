@@ -37,45 +37,48 @@ export default function AboutPage() {
           <div className="border-b border-[#b0c7cc]/40 pb-4 text-center max-w-2xl mx-auto">
             <h2 className="text-2xl font-extrabold text-[#455157]">The Partners</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Inny - CX & Strategic Success */}
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#b0c7cc]/20 border border-[#b0c7cc]/40 flex items-center justify-center text-[#455157]">
-                <Users className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-[#455157]">Inny Taylor</h3>
-                <p className="text-xs font-extrabold text-[#74838b] uppercase tracking-wider mt-0.5">Co-Founder</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:items-stretch">
+            
+            <div className="h-full flex flex-col space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#b0c7cc]/20 border border-[#b0c7cc]/40 flex items-center justify-center text-[#455157] flex-shrink-0">
+                  <Users className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#455157]">Inny Taylor</h3>
+                  <p className="text-xs font-extrabold text-[#74838b] uppercase tracking-wider mt-0.5">Co-Founder</p>
+                </div>
               </div>
               <p className="text-sm text-[#74838b] leading-relaxed">
                 Specializing in building high-impact client success architectures, designing custom lifecycle resources, and optimizing core account touchpoints. I map and implement proactive engagement workflows—from onboarding to business reviews—while structuring CRM platforms to maximize retention.
               </p>
-              <ul className="text-xs text-[#74838b]/80 space-y-2 pt-2 font-medium">
+              <ul className="text-xs text-[#74838b]/80 space-y-2 pt-4 font-medium mt-auto">
                 <li className="flex items-center gap-2">✔ Onboarding, QBR, & Product Launch Frameworks</li>
                 <li className="flex items-center gap-2">✔ High-Touch Strategic Playbooks & Client Decks</li>
                 <li className="flex items-center gap-2">✔ CRM Workspace Architecture & Pipeline Tracking</li>
               </ul>
             </div>
 
-            {/* Nicholas - Frontend & Engineering Quality */}
-            <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#d6dfe1]/40 border border-[#d6dfe1]/80 flex items-center justify-center text-[#74838b]">
-                <Terminal className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-[#455157]">Nicholas Fasulo</h3>
-                <p className="text-xs font-extrabold text-[#74838b] uppercase tracking-wider mt-0.5">Co-Founder</p>
+            <div className="h-full flex flex-col space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#d6dfe1]/40 border border-[#d6dfe1]/80 flex items-center justify-center text-[#74838b] flex-shrink-0">
+                  <Terminal className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#455157]">Nicholas Fasulo</h3>
+                  <p className="text-xs font-extrabold text-[#74838b] uppercase tracking-wider mt-0.5">Co-Founder</p>
+                </div>
               </div>
               <p className="text-sm text-[#74838b] leading-relaxed">
                 Blending modular frontend development with comprehensive technical quality operations. I engineer fast, interactive user interfaces using React and Next.js, backed by stable browser automation frameworks, integrated CI/CD staging pipelines, and structured tracking workflows.
               </p>
-
-              <ul className="text-xs text-[#74838b]/80 space-y-2 pt-2 font-medium">
+              <ul className="text-xs text-[#74838b]/80 space-y-2 pt-4 font-medium mt-auto">
                 <li className="flex items-center gap-2">✔ React, Next.js, Vite & Design Systems (Tailwind)</li>
                 <li className="flex items-center gap-2">✔ Playwright Browser Automation & E2E Testing</li>
                 <li className="flex items-center gap-2">✔ Technical Operations (Git, CI/CD, Jira, Zendesk)</li>
               </ul>
             </div>
+
           </div>
         </section>
 

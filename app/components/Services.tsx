@@ -45,7 +45,7 @@ export default function Services() {
       <div className="text-center mb-16">
         <h2 className="text-3xl font-extrabold text-[#455157] mb-3">We bridge the gap between doing it yourself <br className="hidden sm:inline" /> and hiring a full-time team.</h2>
         <p className="text-[#74838b] max-w-xl mx-auto text-sm sm:text-base">
-          We believe every vision deserves thoughtful, strategic support. Our collaborative partnership is designed to help you move ideas forward through critical thinking, constructive planning, and hands-on execution. Whether you need a sounding board, a strategic partner, or an extra set of experienced hands, we're here to help you build with intention.
+          We believe every vision deserves thoughtful, strategic support. Our collaborative partnership is designed to help you move ideas forward through critical thinking, constructive planning, and hands-on execution.
         </p>
       </div>
 
@@ -53,7 +53,7 @@ export default function Services() {
         {services.map((service, index) => (
           <div key={index} className="p-6 rounded-2xl bg-white border border-[#b0c7cc]/50 hover:border-[#74838b] transition-colors duration-200 ease-out flex flex-col justify-between shadow-sm shadow-[#74838b]/5">
             <div>
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex justify-between items-center mb-4">
                 <div className="w-10 h-10 rounded-lg bg-[#b0c7cc]/20 flex items-center justify-center text-[#74838b]">
                   {service.icon}
                 </div>

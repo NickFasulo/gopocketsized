@@ -84,7 +84,7 @@ export default function Header() {
 
         {/* Hamburger Menu Panel */}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden border-t border-[#b0c7cc]/40 bg-white`} id="mobile-menu">
-          <div className="px-4 pt-3 pb-5 space-y-3 text-base font-semibold text-black flex flex-col">
+          <div className="px-4 pt-3 pb-5 space-y-3 text-base font-semibold text-black flex flex-col justify-center text-center">
             <a 
               href="/#services" 
               onClick={closeMenu}

@@ -2,13 +2,13 @@ import { CheckCircle2 } from 'lucide-react';
 
 const coreCapabilities = [
   'Customer Success Playbooks',
-  'Churn Mitigation Strategy',
+  'Churn Mitigation Strategies',
+  'Brainstorming Sessions',
   'Account Management Workflows',
   'Onboarding Optimization',
-  'TypeScript & Playwright E2E',
+  'Frontend Development',
   'CI/CD Pipeline Integration',
-  'Regression Test Engineering',
-  'GitHub Actions & Vercel'
+  'QA Automated Testing',
 ];
 
 export default function Stack() {
@@ -19,11 +19,15 @@ export default function Stack() {
         <p className="text-[#d6dfe1] text-sm max-w-md mx-auto mb-8">
           The methodologies, frameworks, and core competencies we bring to your organization.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {coreCapabilities.map((capability) => (
-            <span key={capability} className="p-3 rounded-xl bg-[#74838b]/20 border border-[#b0c7cc]/20 text-xs font-semibold text-white flex items-center gap-2 text-left">
+            <span 
+              key={capability} 
+              className="p-3 rounded-xl bg-[#74838b]/20 border border-[#b0c7cc]/20 text-xs font-semibold text-white flex items-center gap-2 text-left h-full"
+            >
               <CheckCircle2 className="w-4 h-4 text-[#9db7bf] flex-shrink-0" />
-              {capability}
+              <span className="break-words">{capability}</span>
             </span>
           ))}
         </div>
