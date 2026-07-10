@@ -7,29 +7,53 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white antialiased font-sans">
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <section className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent text-[#455157] text-xs font-semibold mb-6 border border-[#b0c7cc]/60">
-            <Target className="w-4 h-4 text-[#74838b]" /> Our Mission
+        
+        <section className="mb-24">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent text-[#455157] text-xs font-semibold mb-6 border border-[#b0c7cc]/60">
+              <Target className="w-4 h-4 text-[#74838b]" /> Our Mission
+            </div>
+            <h1 className="text-4xl font-extrabold text-[#455157] tracking-tight sm:text-5xl max-w-2xl mx-auto leading-tight">
+              First and foremost, we're a human-led partner.
+            </h1>
           </div>
-          <h1 className="text-4xl font-extrabold text-[#455157] tracking-tight sm:text-5xl mb-8 max-w-2xl mx-auto">
-            First and foremost, we're a human-led partner.
-          </h1>
-          <div className="text-base sm:text-lg text-[#74838b] max-w-2xl mx-auto leading-relaxed text-left space-y-6">
-            <p>
+
+          <div className="max-w-3xl mx-auto text-[#74838b] text-base sm:text-lg leading-relaxed space-y-12">
+            <p className="text-lg sm:text-xl text-[#455157] font-medium leading-relaxed text-left">
               If you have what we like to call a pocket-sized project, we'll build a customized plan around the support you need. From strategic brainstorming and process mapping to client onboarding, operational development, and project execution, we become an extension of your team without the overhead of hiring internally.
             </p>
-            <p>
-              We don't simply complete tasks we're assigned. As leaders in our respective fields, we bring our own expertise to the table by identifying opportunities for improvement, strengthening workflows, uncovering operational gaps, and offering solutions that help your business run more effectively.
-            </p>
-            <p>
-              Whether you're launching something new or you're an established company that needs additional support on a specific initiative, we're ready to step in where we're needed most.
-            </p>
-            <p>
-              We believe AI is an incredible tool, and we use it ourselves to enhance our work where appropriate. But we also know that some of the most valuable parts of building a business still require human insight, collaboration, creativity, and thoughtful decision-making. That's where we come in.
-            </p>
-            <p>
-              We're a pocket-sized team with extensive experience in client management, operational strategy, and building scalable systems. Our size allows us to provide personalized, one-on-one support while delivering the strategic thinking and execution needed to help your business grow.
-            </p>
+
+            <div className="pt-8 border-t border-[#b0c7cc]/30 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="md:col-span-1">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#455157] md:pt-1">
+                  Our Approach
+                </h3>
+              </div>
+              <div className="md:col-span-2 space-y-4 text-left">
+                <p>
+                  We don't simply complete tasks we're assigned. As leaders in our respective fields, we bring our own expertise to the table by identifying opportunities for improvement, strengthening workflows, uncovering operational gaps, and offering solutions that help your business run more effectively.
+                </p>
+                <p>
+                  Whether you're launching something new or you're an established company that needs additional support on a specific initiative, we're ready to step in where we're needed most.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-[#b0c7cc]/30 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="md:col-span-1">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#455157] md:pt-1">
+                  The Human Element
+                </h3>
+              </div>
+              <div className="md:col-span-2 space-y-4 text-left">
+                <p>
+                  We believe AI is an incredible tool, and we use it ourselves to enhance our work where appropriate. But we also know that some of the most valuable parts of building a business still require human insight, collaboration, creativity, and thoughtful decision-making. That's where we come in.
+                </p>
+                <p>
+                  We're a pocket-sized team with extensive experience in client management, operational strategy, and building scalable systems. Our size allows us to provide personalized, one-on-one support while delivering the strategic thinking and execution needed to help your business grow.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
