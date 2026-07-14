@@ -5,27 +5,26 @@ import { Mail, CheckCircle, XCircle } from 'lucide-react';
 export default function Contact() {
   const [status, setStatus] = useState<'IDLE' | 'PENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     const form = e.currentTarget;
     if (form.user_system_validation.value.length > 0) return;
 
     setStatus('PENDING');
 
-    const data = Object.fromEntries(new FormData(form));
-    
+    const formData = Object.fromEntries(new FormData(form));
+
     const payload = {
-      access_key: "2c215054-7bbd-4d59-9e5c-db7d4d423767",
-      from_name: "PocketSized Consulting",
-      subject: "New PocketSized Project Inquiry",
-      ...data
+      name: `${formData.firstName} ${formData.lastName}`.trim(),
+      email: formData.email,
+      message: formData.message,
     };
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
 
@@ -80,7 +79,7 @@ export default function Contact() {
               <label htmlFor="firstName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">First Name</label>
               <input type="text" id="firstName" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <label htmlFor="lastName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Last Name</label>
               <input type="text" id="lastName" name="lastName" required placeholder="Doe" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
