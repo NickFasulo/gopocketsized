@@ -54,7 +54,7 @@ export default function Contact() {
             <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-white" />
             <div>
               <strong className="font-bold block text-white mb-0.5">Inquiry Received.</strong>
-              Your info has been sent. We'll review the details and get back to you within 24 business hours.
+              Your info has been sent. We will review the details and get back to you within 24 business hours.
             </div>
           </div>
         )}
@@ -71,7 +71,7 @@ export default function Contact() {
 
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
           <div className="absolute opacity-0 pointer-events-none -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
-            <input type="text" name="user_system_validation" tabIndex={-1} />
+            <input type="text" name="user_system_validation" autoComplete="one-time-code" tabIndex={-1} />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
