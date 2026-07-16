@@ -1,13 +1,26 @@
 import { ContactFormEmail } from '../../components/emails/ContactFormEmail';
 import { AutoResponderEmail } from '../../components/emails/AutoResponderEmail';
 import { Resend } from 'resend';
+import { z } from 'zod';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const contactSchema = z.object({
+  name: z.string().min(2).max(100),
+  email: z.email(),
+  message: z.string().min(10).max(500)
+});
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const result = contactSchema.safeParse(body);
+
+    if (!result.success) {
+      return Response.json({ error: 'Invalid data format' }, { status: 400 });
+    }
+    
+    const { name, email, message } = result.data;
 
     if (!name || !email || !message) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 });
