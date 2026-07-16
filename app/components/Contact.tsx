@@ -1,19 +1,54 @@
 "use client";
 import { useState } from 'react';
 import { Mail, CheckCircle, XCircle } from 'lucide-react';
+import { z } from 'zod';
+
+const contactSchema = z.object({
+  firstName: z.string().min(2, "First name must be at least 2 characters"),
+  lastName: z.string().min(2, "Last name must be at least 2 characters"),
+  email: z.email("Please enter a valid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type FormErrors = {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  message?: string;
+};
 
 export default function Contact() {
   const [status, setStatus] = useState<'IDLE' | 'PENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrors({});
 
     const form = e.currentTarget;
     if (form.user_system_validation.value.length > 0) return;
 
-    setStatus('PENDING');
-
     const formData = Object.fromEntries(new FormData(form));
+
+    const result = contactSchema.safeParse({
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      message: formData.message,
+    });
+
+    if (!result.success) {
+      const fieldErrors: FormErrors = {};
+      result.error.issues.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as keyof FormErrors] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setStatus('PENDING');
 
     const payload = {
       name: `${formData.firstName} ${formData.lastName}`.trim(),
@@ -69,7 +104,7 @@ export default function Contact() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6 text-left">
+        <form onSubmit={handleSubmit} noValidate className="space-y-6 text-left">
           <div className="absolute opacity-0 pointer-events-none -z-10 w-0 h-0 overflow-hidden" aria-hidden="true">
             <input type="text" name="user_system_validation" autoComplete="one-time-code" tabIndex={-1} />
           </div>
@@ -77,23 +112,51 @@ export default function Contact() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <label htmlFor="firstName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">First Name</label>
-              <input type="text" id="firstName" name="firstName" required placeholder="John" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
+              <input 
+                type="text" 
+                id="firstName" 
+                name="firstName" 
+                placeholder="John" 
+                className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 ${errors.firstName ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+              />
+              {errors.firstName && <span className="text-xs text-rose-300 font-medium pl-1">{errors.firstName}</span>}
             </div>
 
             <div className="flex flex-col gap-2">
               <label htmlFor="lastName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Last Name</label>
-              <input type="text" id="lastName" name="lastName" required placeholder="Doe" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
+              <input 
+                type="text" 
+                id="lastName" 
+                name="lastName" 
+                placeholder="Doe" 
+                className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 ${errors.lastName ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+              />
+              {errors.lastName && <span className="text-xs text-rose-300 font-medium pl-1">{errors.lastName}</span>}
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="john@company.com" className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200" />
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="john@company.com" 
+              className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 ${errors.email ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+            />
+            {errors.email && <span className="text-xs text-rose-300 font-medium pl-1">{errors.email}</span>}
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="message" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Project Details / Message</label>
-            <textarea id="message" name="message" required rows={5} placeholder="Tell us about your technical roadmap..." className="w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border border-[#b0c7cc]/30 text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 resize-none" />
+            <textarea 
+              id="message" 
+              name="message" 
+              rows={5} 
+              placeholder="Tell us about your technical roadmap..." 
+              className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 resize-none ${errors.message ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+            />
+            {errors.message && <span className="text-xs text-rose-300 font-medium pl-1">{errors.message}</span>}
           </div>
 
           <button type="submit" disabled={status === 'PENDING'} className="w-full px-6 py-3.5 rounded-xl bg-[#74838b] text-white font-bold border border-[#b0c7cc]/30 cursor-pointer hover:bg-[#9db7bf] disabled:bg-[#74838b]/40 disabled:text-[#b0c7cc]/60 disabled:cursor-not-allowed transition-colors duration-200 text-center text-sm shadow-md shadow-[#455157]/20">
