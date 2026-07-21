@@ -3,7 +3,7 @@ import { Users, Code2, Terminal, Layers, ShieldCheck, Headphones } from 'lucide-
 const services = [
   {
     icon: <Users className="w-5 h-5" />,
-    title: "Success Architecture & Decks",
+    title: "Customer Success",
     category: "Customer Experience",
     desc: "Designing comprehensive post-sale customer lifecycles, high-touch onboarding decks, and quarterly business review (QBR) frameworks that defend and expand revenue."
   },
@@ -57,11 +57,7 @@ export default function Services() {
                 <div className="w-10 h-10 rounded-lg bg-[#b0c7cc]/20 flex items-center justify-center text-[#74838b]">
                   {service.icon}
                 </div>
-                <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded border ${
-                  service.category === 'Customer Experience' 
-                    ? 'bg-[#b0c7cc]/20 text-[#455157] border-[#b0c7cc]/40' 
-                    : 'bg-[#d6dfe1]/40 text-[#74838b] border-[#d6dfe1]/80'
-                }`}>
+                <span className="text-[10px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded border bg-[#b0c7cc]/20 text-[#455157] border-[#b0c7cc]/40">
                   {service.category}
                 </span>
               </div>
