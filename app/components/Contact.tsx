@@ -26,7 +26,7 @@ export default function Contact() {
     setErrors({});
 
     const form = e.currentTarget;
-    if (form.user_system_validation.value.length > 0) return;
+    if ((form.elements.namedItem('user_system_validation') as HTMLInputElement)?.value.length > 0) return;
 
     const formData = Object.fromEntries(new FormData(form));
 
@@ -76,29 +76,33 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="max-w-4xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
-      <div className="p-8 sm:p-12 rounded-3xl bg-[#455157] border border-[#74838b]/30 max-w-3xl mx-auto shadow-xl shadow-[#455157]/10">
-        <Mail className="w-12 h-12 text-[#9db7bf] mx-auto mb-4" />
-        <h2 className="text-3xl font-extrabold text-white text-center mb-4 tracking-tight">Let's talk specs.</h2>
-        <p className="text-[#d6dfe1] text-sm sm:text-base text-center max-w-md mx-auto mb-10">
-          Have an engineering roadblock, an automation suite to scope, or a project requiring field-tested execution? Let's connect.
+    <section id="contact" className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#0F172A] border border-slate-800 max-w-3xl mx-auto shadow-sm">
+        <div className="w-12 h-12 rounded-xl bg-[#267EC5]/15 text-[#267EC5] border border-[#267EC5]/30 flex items-center justify-center mx-auto mb-4">
+          <Mail className="w-6 h-6" />
+        </div>
+        
+        <h2 className="text-3xl font-extrabold text-white text-center mb-3 tracking-tight">We would love to work with you.</h2>
+        <p className="text-slate-400 text-sm sm:text-base text-center max-w-md mx-auto mb-10">
+          Have a project, an idea, or a question? <br />
+          Let's connect.
         </p>
 
         {status === 'SUCCESS' && (
-          <div className="mb-8 p-4 rounded-xl bg-[#b0c7cc]/20 border border-[#b0c7cc]/40 flex items-start gap-3 text-[#d6dfe1] text-sm">
-            <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-white" />
+          <div className="mb-8 p-4 rounded-xl bg-emerald-950/50 border border-emerald-500/30 flex items-start gap-3 text-emerald-200 text-sm">
+            <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-emerald-400" />
             <div>
-              <strong className="font-bold block text-white mb-0.5">Inquiry Received.</strong>
+              <strong className="font-bold block text-emerald-100 mb-0.5">Inquiry Received.</strong>
               Your info has been sent. We will review the details and get back to you within 24 business hours.
             </div>
           </div>
         )}
 
         {status === 'ERROR' && (
-          <div className="mb-8 p-4 rounded-xl bg-rose-500/20 border border-rose-500/40 flex items-start gap-3 text-rose-200 text-sm">
-            <XCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-300" />
+          <div className="mb-8 p-4 rounded-xl bg-rose-950/50 border border-rose-500/30 flex items-start gap-3 text-rose-200 text-sm">
+            <XCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-400" />
             <div>
-              <strong className="font-bold block text-white mb-0.5">Submission Failed.</strong>
+              <strong className="font-bold block text-rose-100 mb-0.5">Submission Failed.</strong>
               Something went wrong. Please try again or reach out to us directly.
             </div>
           </div>
@@ -111,55 +115,67 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
-              <label htmlFor="firstName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">First Name</label>
+              <label htmlFor="firstName" className="text-xs font-bold text-slate-300 uppercase tracking-wider">First Name</label>
               <input 
                 type="text" 
                 id="firstName" 
                 name="firstName" 
-                placeholder="John" 
-                className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 ${errors.firstName ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+                placeholder="e.g. Alex" 
+                className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#267EC5] focus:ring-1 focus:ring-[#267EC5] text-sm transition-all duration-200 ${
+                  errors.firstName ? 'border-rose-500/80 bg-rose-950/20' : 'border-slate-800'
+                }`} 
               />
-              {errors.firstName && <span className="text-xs text-rose-300 font-medium pl-1">{errors.firstName}</span>}
+              {errors.firstName && <span className="text-xs text-rose-400 font-medium pl-1">{errors.firstName}</span>}
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="lastName" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Last Name</label>
+              <label htmlFor="lastName" className="text-xs font-bold text-slate-300 uppercase tracking-wider">Last Name</label>
               <input 
                 type="text" 
                 id="lastName" 
                 name="lastName" 
-                placeholder="Doe" 
-                className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 ${errors.lastName ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+                placeholder="e.g. Morgan" 
+                className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#267EC5] focus:ring-1 focus:ring-[#267EC5] text-sm transition-all duration-200 ${
+                  errors.lastName ? 'border-rose-500/80 bg-rose-950/20' : 'border-slate-800'
+                }`} 
               />
-              {errors.lastName && <span className="text-xs text-rose-300 font-medium pl-1">{errors.lastName}</span>}
+              {errors.lastName && <span className="text-xs text-rose-400 font-medium pl-1">{errors.lastName}</span>}
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Email Address</label>
+            <label htmlFor="email" className="text-xs font-bold text-slate-300 uppercase tracking-wider">Email Address</label>
             <input 
               type="email" 
               id="email" 
               name="email" 
-              placeholder="john@company.com" 
-              className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 ${errors.email ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+              placeholder="you@example.com" 
+              className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#267EC5] focus:ring-1 focus:ring-[#267EC5] text-sm transition-all duration-200 ${
+                errors.email ? 'border-rose-500/80 bg-rose-950/20' : 'border-slate-800'
+              }`} 
             />
-            {errors.email && <span className="text-xs text-rose-300 font-medium pl-1">{errors.email}</span>}
+            {errors.email && <span className="text-xs text-rose-400 font-medium pl-1">{errors.email}</span>}
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-xs font-bold text-[#b0c7cc] uppercase tracking-wider">Project Details / Message</label>
+            <label htmlFor="message" className="text-xs font-bold text-slate-300 uppercase tracking-wider">Project Details / Message</label>
             <textarea 
               id="message" 
               name="message" 
               rows={5} 
-              placeholder="Tell us about your technical roadmap..." 
-              className={`w-full px-4 py-3 rounded-xl bg-[#74838b]/30 border text-white placeholder-[#b0c7cc]/50 focus:outline-none focus:border-[#9db7bf] text-sm transition-colors duration-200 resize-none ${errors.message ? 'border-rose-400 focus:border-rose-400 bg-rose-500/5' : 'border-[#b0c7cc]/30'}`} 
+              placeholder="Tell us about your project..." 
+              className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:border-[#267EC5] focus:ring-1 focus:ring-[#267EC5] text-sm transition-all duration-200 resize-none ${
+                errors.message ? 'border-rose-500/80 bg-rose-950/20' : 'border-slate-800'
+              }`} 
             />
-            {errors.message && <span className="text-xs text-rose-300 font-medium pl-1">{errors.message}</span>}
+            {errors.message && <span className="text-xs text-rose-400 font-medium pl-1">{errors.message}</span>}
           </div>
 
-          <button type="submit" disabled={status === 'PENDING'} className="w-full px-6 py-3.5 rounded-xl bg-[#74838b] text-white font-bold border border-[#b0c7cc]/30 cursor-pointer hover:bg-[#9db7bf] disabled:bg-[#74838b]/40 disabled:text-[#b0c7cc]/60 disabled:cursor-not-allowed transition-colors duration-200 text-center text-sm shadow-md shadow-[#455157]/20">
+          <button 
+            type="submit" 
+            disabled={status === 'PENDING'} 
+            className="w-full px-6 py-3.5 rounded-xl bg-[#267EC5] hover:bg-[#1A5A90] text-white font-bold cursor-pointer disabled:bg-[#267EC5]/50 disabled:cursor-not-allowed transition-colors duration-200 text-center text-sm"
+          >
             {status === 'PENDING' ? 'Transmitting...' : 'Submit Inquiry'}
           </button>
         </form>

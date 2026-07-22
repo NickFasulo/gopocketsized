@@ -41,7 +41,7 @@ export default function Header() {
       }`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           
-          <Link href="/#hero" onClick={closeMenu} className="flex items-center gap-2 font-extrabold text-xl tracking-tight text-[#455157] group">
+          <Link href="/#hero" onClick={closeMenu} className="flex items-center gap-2 font-extrabold text-xl tracking-tight text-[#1A5A90] group">
             <Image
               src="/logo.svg"
               alt="PocketSized Logo"
@@ -54,13 +54,13 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 text-sm font-semibold text-black">
-            <a href="/#services" className="hover:text-[#455157] transition-colors duration-200 ease-out cursor-pointer block py-1">Solutions</a>
-            <a href="/#solutions" className="hover:text-[#455157] transition-colors duration-200 ease-out cursor-pointer block py-1">Framework</a>
-            <Link href="/about" className="hover:text-[#455157] transition-colors duration-200 ease-out cursor-pointer block py-1">About Us</Link>
+            <a href="/#services" className="hover:text-[#1A5A90] transition-colors duration-200 ease-out cursor-pointer block py-1">Solutions</a>
+            <a href="/#solutions" className="hover:text-[#1A5A90] transition-colors duration-200 ease-out cursor-pointer block py-1">Framework</a>
+            <Link href="/about" className="hover:text-[#1A5A90] transition-colors duration-200 ease-out cursor-pointer block py-1">About Us</Link>
             
             <a 
               href="/#contact" 
-              className="ml-2 px-4 py-2 rounded-xl bg-[#74838b] text-white font-bold hover:bg-[#455157] active:bg-[#74838b] transition-colors duration-200 ease-out shadow-sm shadow-[#74838b]/10 tracking-wide text-center cursor-pointer"
+              className="ml-2 px-4 py-2 rounded-xl bg-[#267EC5] text-white font-bold hover:bg-[#1A5A90] active:bg-[#267EC5] transition-colors duration-200 ease-out shadow-sm shadow-[#267EC5]/10 tracking-wide text-center cursor-pointer"
             >
               Work With Us
             </a>
@@ -71,7 +71,7 @@ export default function Header() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-xl text-[#455157] hover:bg-[#b0c7cc]/10 cursor-pointer focus:outline-none transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-xl text-[#1A5A90] focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -88,21 +88,21 @@ export default function Header() {
             <a 
               href="/#services" 
               onClick={closeMenu}
-              className="hover:text-[#455157] hover:bg-[#b0c7cc]/10 px-3 py-2 rounded-xl transition-colors duration-200 ease-out cursor-pointer"
+              className="px-3 py-2 rounded-xl"
             >
               Solutions
             </a>
             <a 
               href="/#solutions" 
               onClick={closeMenu}
-              className="hover:text-[#455157] hover:bg-[#b0c7cc]/10 px-3 py-2 rounded-xl transition-colors duration-200 ease-out cursor-pointer"
+              className="px-3 py-2 rounded-xl"
             >
               Framework
             </a>
             <Link 
               href="/about" 
               onClick={closeMenu}
-              className="hover:text-[#455157] hover:bg-[#b0c7cc]/10 px-3 py-2 rounded-xl transition-colors duration-200 ease-out cursor-pointer"
+              className="px-3 py-2 rounded-xl"
             >
               About Us
             </Link>
@@ -111,7 +111,7 @@ export default function Header() {
               <a 
                 href="/#contact" 
                 onClick={closeMenu}
-                className="w-full block px-4 py-3 rounded-xl bg-[#74838b] text-white font-bold hover:bg-[#455157] active:bg-[#74838b] transition-colors duration-200 ease-out shadow-sm shadow-[#74838b]/10 tracking-wide text-center cursor-pointer"
+                className="w-full block px-4 py-3 rounded-xl bg-[#267EC5] text-white font-bold shadow-sm shadow-[#267EC5]/10 tracking-wide text-center"
               >
                 Work With Us
               </a>
