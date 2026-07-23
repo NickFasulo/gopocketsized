@@ -71,7 +71,7 @@ export default function Header() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-xl text-[#1A5A90] focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-xl text-black focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
