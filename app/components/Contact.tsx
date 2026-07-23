@@ -77,7 +77,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="p-8 sm:p-12 rounded-3xl bg-[#0F172A] border border-slate-800 max-w-3xl mx-auto shadow-sm">
+      <div className="p-8 sm:p-12 rounded-3xl bg-[#0F172A] max-w-3xl mx-auto shadow-sm">
         <div className="w-12 h-12 rounded-xl bg-[#267EC5]/15 text-[#267EC5] border border-[#267EC5]/30 flex items-center justify-center mx-auto mb-4">
           <Mail className="w-6 h-6" />
         </div>

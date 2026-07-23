@@ -10,22 +10,22 @@ export default function AboutPage() {
         
         <section className="mb-24">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-transparent text-[#455157] text-xs font-semibold mb-6 border border-[#b0c7cc]/60">
-              <Target className="w-4 h-4 text-[#74838b]" /> Our Mission
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[#455157] text-xs font-semibold mb-6 border border-[#267EC5]/40">
+              <Target className="w-4 h-4 text-[#267EC5]" /> Our Mission
             </div>
-            <h1 className="text-4xl font-extrabold text-[#455157] tracking-tight sm:text-5xl max-w-2xl mx-auto leading-tight">
+            <h1 className="text-4xl font-extrabold text-black tracking-tight sm:text-5xl max-w-2xl mx-auto leading-tight">
               First and foremost, we're a human-led partner.
             </h1>
           </div>
 
-          <div className="max-w-3xl mx-auto text-[#74838b] text-base sm:text-lg leading-relaxed space-y-12">
+          <div className="max-w-3xl mx-auto text-[#455157] text-base sm:text-lg leading-relaxed space-y-12">
             <p className="text-lg sm:text-xl text-[#455157] font-medium leading-relaxed text-left">
               If you have what we like to call a pocket-sized project, we'll build a customized plan around the support you need. From strategic brainstorming and process mapping to client onboarding, operational development, and project execution, we become an extension of your team without the overhead of hiring internally.
             </p>
 
             <div className="pt-8 border-t border-[#b0c7cc]/30 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
               <div className="md:col-span-1">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#455157] md:pt-1">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-black md:pt-1">
                   Our Approach
                 </h3>
               </div>
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
             <div className="pt-8 border-t border-[#b0c7cc]/30 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
               <div className="md:col-span-1">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#455157] md:pt-1">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-black md:pt-1">
                   The Human Element
                 </h3>
               </div>
@@ -59,55 +59,55 @@ export default function AboutPage() {
 
         <section className="space-y-16">
           <div className="border-b border-[#b0c7cc]/40 pb-4 text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl font-extrabold text-[#455157]">The Partners</h2>
+            <h2 className="text-2xl font-extrabold text-black">The Partners</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:items-stretch">
             
             <div className="h-full flex flex-col space-y-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#b0c7cc]/20 border border-[#b0c7cc]/40 flex items-center justify-center text-[#455157] flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#267EC5] flex items-center justify-center text-white flex-shrink-0">
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#455157]">Inny Taylor</h3>
-                  <p className="text-xs font-extrabold text-[#74838b] uppercase tracking-wider mt-0.5">Co-Founder</p>
+                  <h3 className="text-xl font-bold text-black">Inny Taylor</h3>
+                  <p className="text-xs font-extrabold text-[#455157] uppercase tracking-wider mt-0.5">Co-Founder</p>
                 </div>
               </div>
-              <p className="text-sm text-[#74838b] leading-relaxed">
+              <p className="text-sm text-[#455157] leading-relaxed">
                 Specializing in building high-impact client success architectures, designing custom lifecycle resources, and optimizing core account touchpoints. I map and implement proactive engagement workflows—from onboarding to business reviews—while structuring CRM platforms to maximize retention.
               </p>
-              <ul className="text-xs text-[#74838b]/80 space-y-2 pt-4 font-medium mt-auto">
-                <li className="flex items-center gap-2">✔ Onboarding, QBR, & Product Launch Frameworks</li>
-                <li className="flex items-center gap-2">✔ High-Touch Strategic Playbooks & Client Decks</li>
-                <li className="flex items-center gap-2">✔ CRM Workspace Architecture & Pipeline Tracking</li>
+              <ul className="text-xs text-[#455157] space-y-2 pt-4 font-medium mt-auto">
+                <li className="flex items-center gap-2"><span className="text-[#267EC5]">✔</span> Onboarding, QBR, & Product Launch Frameworks</li>
+                <li className="flex items-center gap-2"><span className="text-[#267EC5]">✔</span> High-Touch Strategic Playbooks & Client Decks</li>
+                <li className="flex items-center gap-2"><span className="text-[#267EC5]">✔</span> CRM Workspace Architecture & Pipeline Tracking</li>
               </ul>
             </div>
 
             <div className="h-full flex flex-col space-y-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#d6dfe1]/40 border border-[#d6dfe1]/80 flex items-center justify-center text-[#74838b] flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#267EC5] flex items-center justify-center text-white flex-shrink-0">
                   <Terminal className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#455157]">Nicholas Fasulo</h3>
-                  <p className="text-xs font-extrabold text-[#74838b] uppercase tracking-wider mt-0.5">Co-Founder</p>
+                  <h3 className="text-xl font-bold text-black">Nicholas Fasulo</h3>
+                  <p className="text-xs font-extrabold text-[#455157] uppercase tracking-wider mt-0.5">Co-Founder</p>
                 </div>
               </div>
-              <p className="text-sm text-[#74838b] leading-relaxed">
+              <p className="text-sm text-[#455157] leading-relaxed">
                 Blending modular frontend development with comprehensive technical quality operations. I engineer fast, interactive user interfaces using React and Next.js, backed by stable browser automation frameworks, integrated CI/CD staging pipelines, and structured tracking workflows.
               </p>
-              <ul className="text-xs text-[#74838b]/80 space-y-2 pt-4 font-medium mt-auto">
-                <li className="flex items-center gap-2">✔ React, Next.js, Vite & Design Systems (Tailwind)</li>
-                <li className="flex items-center gap-2">✔ Playwright Browser Automation & E2E Testing</li>
-                <li className="flex items-center gap-2">✔ Technical Operations (Git, CI/CD, Jira, Zendesk)</li>
+              <ul className="text-xs text-[#455157] space-y-2 pt-4 font-medium mt-auto">
+                <li className="flex items-center gap-2"><span className="text-[#267EC5]">✔</span> React, Next.js, Vite & Design Systems (Tailwind)</li>
+                <li className="flex items-center gap-2"><span className="text-[#267EC5]">✔</span> Playwright Browser Automation & E2E Testing</li>
+                <li className="flex items-center gap-2"><span className="text-[#267EC5]">✔</span> Technical Operations (Git, CI/CD, Jira, Zendesk)</li>
               </ul>
             </div>
 
           </div>
         </section>
 
-        <section className="mt-24 p-8 rounded-2xl bg-[#455157] border border-[#74838b]/30 text-center shadow-xl shadow-[#455157]/10">
-          <ShieldCheck className="w-10 h-10 text-[#9db7bf] mx-auto mb-4" />
+        <section className="mt-24 p-8 rounded-2xl bg-[#0F172A] border border-[#74838b]/30 text-center shadow-sm">
+          <ShieldCheck className="w-10 h-10 text-[#267EC5] mx-auto mb-4" />
           <h3 className="text-lg font-bold text-white mb-2">Why PocketSized?</h3>
           <p className="text-sm text-[#d6dfe1] max-w-xl mx-auto leading-relaxed">
             Most agencies only focus on one side of the coin: either fixing bugs or managing user complaints. We combine technical QA engineering directly with strategic client experience, resolving product issues completely before your clients ever run into them.
